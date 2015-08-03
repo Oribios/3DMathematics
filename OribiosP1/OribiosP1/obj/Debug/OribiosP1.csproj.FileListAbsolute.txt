@@ -1,0 +1,25 @@
+C:\Users\r201-stu\Desktop\New folder\OribiosP1\OribiosP1\bin\OribiosP1.dll
+C:\Users\r201-stu\Desktop\New folder\OribiosP1\OribiosP1\bin\OribiosP1.pdb
+C:\Users\r201-stu\Desktop\New folder\OribiosP1\OribiosP1\obj\Debug\OribiosP1.csprojResolveAssemblyReference.cache
+C:\Users\r201-stu\Desktop\New folder\OribiosP1\OribiosP1\obj\Debug\OribiosP1.dll
+C:\Users\r201-stu\Desktop\New folder\OribiosP1\OribiosP1\obj\Debug\OribiosP1.pdb
+E:\WEEK 1\MTH393_OribioChavezStephen\OribiosP1\OribiosP1\bin\OribiosP1.dll
+E:\WEEK 1\MTH393_OribioChavezStephen\OribiosP1\OribiosP1\bin\OribiosP1.pdb
+E:\WEEK 1\MTH393_OribioChavezStephen\OribiosP1\OribiosP1\obj\Debug\OribiosP1.csprojResolveAssemblyReference.cache
+E:\WEEK 1\MTH393_OribioChavezStephen\OribiosP1\OribiosP1\obj\Debug\OribiosP1.dll
+E:\WEEK 1\MTH393_OribioChavezStephen\OribiosP1\OribiosP1\obj\Debug\OribiosP1.pdb
+C:\Users\r201-stu\Desktop\OribiosP1\OribiosP1\bin\OribiosP1.dll
+C:\Users\r201-stu\Desktop\OribiosP1\OribiosP1\bin\OribiosP1.pdb
+C:\Users\r201-stu\Desktop\OribiosP1\OribiosP1\obj\Debug\OribiosP1.csprojResolveAssemblyReference.cache
+C:\Users\r201-stu\Desktop\OribiosP1\OribiosP1\obj\Debug\OribiosP1.dll
+C:\Users\r201-stu\Desktop\OribiosP1\OribiosP1\obj\Debug\OribiosP1.pdb
+C:\Users\Oribi_000\Desktop\OribiosP1\OribiosP1\bin\OribiosP1.dll
+C:\Users\Oribi_000\Desktop\OribiosP1\OribiosP1\bin\OribiosP1.pdb
+C:\Users\Oribi_000\Desktop\OribiosP1\OribiosP1\obj\Debug\OribiosP1.csprojResolveAssemblyReference.cache
+C:\Users\Oribi_000\Desktop\OribiosP1\OribiosP1\obj\Debug\OribiosP1.dll
+C:\Users\Oribi_000\Desktop\OribiosP1\OribiosP1\obj\Debug\OribiosP1.pdb
+C:\Users\Oribi_000\Desktop\7_28_15\OribiosP1\OribiosP1\bin\OribiosP1.dll
+C:\Users\Oribi_000\Desktop\7_28_15\OribiosP1\OribiosP1\bin\OribiosP1.pdb
+C:\Users\Oribi_000\Desktop\7_28_15\OribiosP1\OribiosP1\obj\Debug\OribiosP1.csprojResolveAssemblyReference.cache
+C:\Users\Oribi_000\Desktop\7_28_15\OribiosP1\OribiosP1\obj\Debug\OribiosP1.dll
+C:\Users\Oribi_000\Desktop\7_28_15\OribiosP1\OribiosP1\obj\Debug\OribiosP1.pdb
