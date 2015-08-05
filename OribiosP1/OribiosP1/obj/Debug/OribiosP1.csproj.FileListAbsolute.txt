@@ -23,3 +23,8 @@ C:\Users\Oribi_000\Desktop\7_28_15\OribiosP1\OribiosP1\bin\OribiosP1.pdb
 C:\Users\Oribi_000\Desktop\7_28_15\OribiosP1\OribiosP1\obj\Debug\OribiosP1.csprojResolveAssemblyReference.cache
 C:\Users\Oribi_000\Desktop\7_28_15\OribiosP1\OribiosP1\obj\Debug\OribiosP1.dll
 C:\Users\Oribi_000\Desktop\7_28_15\OribiosP1\OribiosP1\obj\Debug\OribiosP1.pdb
+C:\Users\r201-stu\Desktop\3DMathematics\OribiosP1\OribiosP1\bin\OribiosP1.dll
+C:\Users\r201-stu\Desktop\3DMathematics\OribiosP1\OribiosP1\bin\OribiosP1.pdb
+C:\Users\r201-stu\Desktop\3DMathematics\OribiosP1\OribiosP1\obj\Debug\OribiosP1.csprojResolveAssemblyReference.cache
+C:\Users\r201-stu\Desktop\3DMathematics\OribiosP1\OribiosP1\obj\Debug\OribiosP1.dll
+C:\Users\r201-stu\Desktop\3DMathematics\OribiosP1\OribiosP1\obj\Debug\OribiosP1.pdb

@@ -62,7 +62,6 @@
     <Content Include="Scripts\CORE.Material.js" />
     <Content Include="Scripts\CORE.Mesh.js" />
     <Content Include="Scripts\CORE.WebGL.js" />
-    <Content Include="Scripts\StudentCode.Core.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

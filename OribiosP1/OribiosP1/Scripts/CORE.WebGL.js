@@ -22,10 +22,10 @@ function _OnStartup() {
 }
 
 function GL_Init() {
-    gl.clearColor(0.5, 1.0, 0.5, 1.0);
+    gl.clearColor(0.9, 0.1, 0.1, 1.0);
     gl.enable(gl.DEPTH_TEST);
     gl.depthFunc(gl.LEQUAL);
-    gl.enable(gl.CULL_FACE);
+    //gl.enable(gl.CULL_FACE);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     gl.viewport(0, 0, canvas.width, canvas.height)
 }

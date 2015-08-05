@@ -13,19 +13,20 @@ function Mesh() {
     this.vertices = [];
     this.normals = [];
     this.textureCoords = [];
+    this.indices = [];
     this.nextIndex = 0;
     this.built = false;
 }
 
 function MeshVertex(x, y, z, nx, ny, nz, tu, tv) {
-    this.x();
-    this.y();
-    this.z();
-    this.nx();
-    this.ny();
-    this.nz();
-    this.tu();
-    this.tv();
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.nx = nx;
+    this.ny = ny;
+    this.nz = nz;
+    this.tu = tu;
+    this.tv = tv;
 }
 
 Mesh.prototype.material= function(){
@@ -39,16 +40,16 @@ Mesh.prototype.AddVertex = function (vertex) {
     this.normals.push (vertex.nx);
     this.normals.push(vertex.ny);
     this.normals.push(vertex.nz);
-    this.textureCoords(vertex.tu);
-    this.textureCoords(vertex.tv);
-    this.indices.push(nextIndex);
+    this.textureCoords.push(vertex.tu);
+    this.textureCoords.push(vertex.tv);
+    this.indices.push(this.nextIndex);
     this.nextIndex += 1;
 }
 
 Mesh.prototype.Build = function () {
-    Mesh.material.Build(this.Mesh);
+    this.material.Build(this);
 }
 
 Mesh.prototype.Render = function (camera) {
-    this.Mesh.material.Render(camera, this.Mesh);
+    this.material.Render(camera, this);
 }
