@@ -2,27 +2,11 @@
 //////////////////////////////////////////////
 
 var gl = null;
-var draw = null;
 var canvas = null;
-
-
-
-function OnSystemFrame() {
-    OnFrame();
-    window.requestAnimationFrame(OnSystemFrame);
-
-}
-
-function _OnStartup() {
-    canvas = document.getElementById("_CanvasScreen");
-    gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-    GL_Init();
-    OnInitialize();
-    OnSystemFrame();
-}
+var draw = null;
 
 function GL_Init() {
-    gl.clearColor(0.9, 0.1, 0.1, 1.0);
+    gl.clearColor(0.1, 0.9, 0.1, 1.0);
     gl.enable(gl.DEPTH_TEST);
     gl.depthFunc(gl.LEQUAL);
     //gl.enable(gl.CULL_FACE);
@@ -30,27 +14,43 @@ function GL_Init() {
     gl.viewport(0, 0, canvas.width, canvas.height)
 }
 
-function _OnWindowResize(a) {
+function OnSystemFrame() {
+    OnFrame();
+    window.requestAnimationFrame(OnSystemFrame);
 
 }
 
-function _OnKeyDown(a) {
+function _OnStartup(eventArgs) {
+    canvas = document.getElementById("_CanvasScreen");
+    gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    GL_Init();
+    OnInitialize();
+    OnSystemFrame();
+}
+
+
+
+function _OnWindowResize(eventArgs) {
 
 }
 
-function _OnKeyUp(a) {
+function _OnKeyDown(eventArgs) {
 
 }
 
-function _OnMouseMove(a) {
+function _OnKeyUp(eventArgs) {
 
 }
 
-function _OnMouseDown(a) {
+function _OnMouseMove(eventArgs) {
 
 }
 
-function _OnMouseUp(a) {
+function _OnMouseDown(eventArgs) {
+
+}
+
+function _OnMouseUp(eventArgs) {
 
 }
 

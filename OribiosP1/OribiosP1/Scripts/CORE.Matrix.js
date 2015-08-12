@@ -11,10 +11,6 @@ var _ProjectionMatrix = []; // Describes distortion to simulate certain camera l
 var _NormalMatrix = []; // describes transformation of surface normals for lighting
 var _IDENTITY4x4 = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
 var _IDENTITY3x3 = [1, 0, 0, 0, 1, 0, 0, 0, 1];
-
-
-
-
 //sets Global Model Matrix
 function GL_SetModelMatrix(Matrix) {
     _ModelMatrix = Matrix;
@@ -35,6 +31,13 @@ function GL_SetNormalMatrix(Matrix) {
     _NormalMatrix = Matrix;
 }
 
+function identityMatrix3x3() {
+    return [
+        1, 0, 0, 0, 1, 0, 0, 0, 1
+    ];
+
+}
+
 function identityMatrix4x4() {
     return [
      1, 0, 0, 0,
@@ -43,52 +46,12 @@ function identityMatrix4x4() {
      0, 0, 0, 1
     ];
 }
-function TranslateMatrix() {
+function TranslateMatrix(x, y, z) {
     return [
     1, 0, 0, x,
     0, 1, 0, y,
-    0, 0, 0, z,
+    0, 0, 1, z,
     0, 0, 0, 1,
-    ];
-}
-function OrthographicMatrix(r, b, t, n, f, L) {
-    return [
-        2 / (r - L), 0, 0, (r + L) / (r - L),
-        0, 2 / (t - b), 0, (t + b) / (t - b),
-        0, 0, -2 / (f - n), (f + n) / (f - n),
-        0, 0, 0, 1];
-}
-
-function OrthographicInverseMatrix(r, b, t, n, f, L) {
-    return [
-        (r - 1) / 2.0, 0, 0, (r + 1) / 2.0,
-        0, (t - b) / 2.0, 0, (t + b) / 2.0,
-        0, 0, (f - n) / -2.0, (f + n) / 2.0,
-        0, 0, 0, 1];
-}
-
-function PerspectiveMatrix(fov, w, h, near, far) {
-    var aspect = w / h;
-    fov = (fov * 3.14159265358) / 180.0;
-    var fovy = fov / aspect;
-    var f = 1 / tan(fovy / 2);
-    return [
-        f / aspect, 0, 0, 0,
-        0, f, 0, 0,
-        0, 0, (far + near) / (near - far), (2 * far * near) / (near - far),
-        0, 0, -1, 0, ];
-}
-
-function PerspectiveInverseMatrix(w, h, fov, near, far) {
-    var aspect = w / h;
-    fov = (fov * 3.14159265358) / 180.0;
-    var fovy = fov / aspect;
-    var f = 1 / tan(fovy / 2);
-    return [
-        aspect / f, 0, 0, 0,
-        0, 1 / f, 0, 0,
-        0, 0, 0, -1,
-        0, 0, (near - far) / (2 * far * near), (far + near) / (2 * far * near),
     ];
 }
 
@@ -102,11 +65,19 @@ function RotationMatrix(g, b, a) {
 
 }
 
-function RotationInverseMatrix(a, b, g) {
+function RotationInverseMatrix(g, a, b) {
     return [
         cos(a) * cos(b), sin(a) * cos(b), -sin(b), 0,
          cos(a) * sin(b) * sin(g) - sin(a) * cos(g), sin(a) * sin(b) * sin(g) + cos(a) * cos(g), cos(b) * sin(g), 0,
          cos(a) * sin(b) * cos(g) + sin(a) * sin(g), sin(a) * sin(b) * cos(g) - cos(a) * sin(g), cos(b) * cos(g), 0,
+        0, 0, 0, 1];
+}
+
+function RotationVectorMatrix(t, Vx, Vy, Vz) {
+    return [
+        cos(t) + Vx * Vx * (1 - cos(t)), -Vz * sin(t) + Vx * Vy * (1 - cos(t)), Vy * sin(t) + Vx * Vz * (1 - cos(t)), 0,
+        Vz * sin(t) + Vy * Vx * (1 - cos(t)), cos(t) + Vy * Vy * (1 - cos(t)), -Vx * sin(t) + Vy * Vz * (1 - cos(t)), 0,
+        -Vy * sin(t) + Vz * Vx * (1 - cos(t)), Vx * sin(t) + Vz * Vy * (1 - cos(t)), cos(t) + Vz * Vz * (1 - cos(t)), 0,
         0, 0, 0, 1];
 }
 
@@ -126,23 +97,50 @@ function SpaceRotationInverseMatrix(xaxis, yaxis, zaxis) {
         0, 0, 0, 1];
 }
 
-function RotationVectorMatrix(Vx, Vy, VZ, t) {
+function OrthographicMatrix(l, r, b, t, n, f) {
     return [
-        cos(t) + Vx * Vx * (1 - cos(t)), -Vz * sin(t) + Vx * Vy * (1 - cos(t)), Vy * sin(t) + Vx * Vz * (1 - cos(t)), 0,
-        Vz * sin(t) + Vy * Vx * (1 - cos(t)), cos(t) + Vy * Vy * (1 - cos(t)), -Vx * sin(t) + Vy * Vz * (1 - cos(t)), 0,
-        -Vy * sin(t) + Vz * Vx * (1 - cos(t)), Vx * sin(t) + Vz * Vy * (1 - cos(t)), cos(t) + Vz * Vz * (1 - cos(t)), 0,
+        2 / (r - l), 0, 0, (r + l) / (r - l),
+        0, 2 / (t - b), 0, (t + b) / (t - b),
+        0, 0, -2 / (f - n), (f + n) / (f - n),
         0, 0, 0, 1];
 }
 
-
-
-function IdentityMatrix() {
-
-    return identityMatrix4x4();
+function OrthographicInverseMatrix(l, r, b, t, n, f) {
+    return [
+        (r - l) / 2.0, 0, 0, (r + l) / 2.0,
+        0, (t - b) / 2.0, 0, (t + b) / 2.0,
+        0, 0, (f - n) / -2.0, (f + n) / 2.0,
+        0, 0, 0, 1];
 }
 
+function PerspectiveMatrix(fov, w, h, near, far) {
+    var aspect = w / h;
+    fov = (fov * 3.14159265358) / 180.0;
+    var fovy = fov / aspect;
+    var f = 1 / tan(fovy / 2);
+    return [
+        f / aspect, 0, 0, 0,
+        0, f, 0, 0,
+        0, 0, (far + near) / (near - far), (2 * far * near) / (near - far),
+        0, 0, -1, 0, ];
+}
 
+function PerspectiveInverseMatrix(fov, w, h, near, far) {
+    var aspect = w / h;
+    fov = (fov * 3.14159265358) / 180.0;
+    var fovy = fov / aspect;
+    var f = 1 / tan(fovy / 2);
+    return [
+        aspect / f, 0, 0, 0,
+        0, 1 / f, 0, 0,
+        0, 0, 0, -1,
+        0, 0, (near - far) / (2 * far * near), (far + near) / (2 * far * near),
+    ];
+}
 
+function TransformPoint(m, p){
+
+}
 
 function MatrixMultiply(m, n) {
     var r = IdentityMatrix();
